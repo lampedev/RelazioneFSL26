@@ -39,7 +39,7 @@ export default function Intro() {
             <ScrollReveal delay={0.15}>
               <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
                 Deloitte NextHub Bari rappresenta uno dei progetti strategici piu rilevanti per il
-                Mezzogiorno. Oltre 9.000 mq di innovazione, formazione e trasformazione digitale.
+                Sud Italia. Oltre 9.000 mq di innovazione, formazione e trasformazione digitale.
               </p>
             </ScrollReveal>
           </div>

@@ -81,7 +81,7 @@ export default function Attivita() {
                 02 / WORKSHOP & APPROFONDIMENTI
               </span>
               <h3 className="text-3xl md:text-4xl font-serif font-normal tracking-tight text-text-primary mb-5">
-                Tecnologie Exponentiali
+                Tecnologie di Frontiera
               </h3>
               <p className="text-lg text-text-secondary leading-relaxed mb-6">
                 Sessioni formative tenute da consulenti Deloitte su tematiche all&apos;avanguardia: dal
@@ -121,7 +121,7 @@ export default function Attivita() {
                 Mondo Corporate e Università
               </h3>
               <p className="text-lg text-text-secondary leading-relaxed mb-4">
-                L&apos;esperienza ha offerto uno spaccato autentico sulla vita in una multinazionale
+                L&apos;esperienza ci ha fatto vivere da vicino la realtà di una multinazionale
                 (&quot;Life at Deloitte&quot;) e sulle professioni STEM. Il percorso si e concluso con
                 l&apos;orientamento al <strong className="text-text-primary">Politecnico di Bari</strong>.
               </p>

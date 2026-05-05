@@ -1,5 +1,5 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import {
   Brain,
   ShieldCheck,
@@ -11,7 +11,7 @@ import {
   Lightning,
   ChatCenteredText,
 } from '@phosphor-icons/react';
-import SpotlightCard from './SpotlightCard';
+import { MagicCard, GlobalSpotlight } from './MagicBento';
 
 function ScrollReveal({ children, className = '', delay = 0 }) {
   return (
@@ -45,47 +45,12 @@ const soft = [
   { title: 'Pensiero Critico', desc: 'Valutare soluzioni oggettivamente.' },
 ];
 
-function InfiniteList() {
-  const items = [
-    'Rilevare anomalie',
-    'Ottimizzare workflow',
-    'Proteggere dati',
-    'Simulare scenari',
-    'Analizzare trend',
-  ];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % items.length), 2200);
-    return () => clearInterval(t);
-  }, []);
-
-  return (
-    <div className="space-y-2">
-      {items.map((item, i) => (
-        <motion.div
-          key={item}
-          layout
-          animate={{
-            opacity: i === index ? 1 : 0.35,
-            x: i === index ? 8 : 0,
-          }}
-          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="flex items-center gap-3 text-base"
-        >
-          <span className={`w-2 h-2 rounded-full ${i === index ? 'bg-accent' : 'bg-slate-200'}`} />
-          <span className={i === index ? 'text-text-primary font-medium' : 'text-text-tertiary'}>
-            {item}
-          </span>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
 export default function Competenze() {
+  const gridRef = useRef(null);
+
   return (
-    <section id="competenze" className="py-28 md:py-40 bg-elevated">
+    <section id="competenze" className="py-28 md:py-40 bg-elevated relative">
+      <GlobalSpotlight gridRef={gridRef} spotlightRadius={400} />
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <ScrollReveal>
           <div className="max-w-3xl mb-16">
@@ -98,19 +63,12 @@ export default function Competenze() {
           </div>
         </ScrollReveal>
 
-        {/* Bento 2.0 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {/* Row 1: Large card + two small */}
+        {/* Bento 2.0 Grid — wrapped with bento-section for spotlight */}
+        <div ref={gridRef} className="bento-section grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          {/* Row 1: Large card AI + metric 35h */}
           <ScrollReveal className="md:col-span-2">
-            <SpotlightCard
-              className="h-full p-8 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-              spotlightColor="rgba(5, 150, 105, 0.15)"
-            >
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="h-full flex flex-col justify-between"
-              >
+            <MagicCard className="h-full p-8 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+              <div className="h-full flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
                     <Brain size={20} weight="duotone" />
@@ -123,47 +81,27 @@ export default function Competenze() {
                     integrazione nei processi aziendali.
                   </p>
                 </div>
-                <div className="mt-8">
-                  <p className="text-xs uppercase tracking-widest text-text-tertiary mb-3">
-                    Applicazioni pratiche
-                  </p>
-                  <InfiniteList />
-                </div>
-              </motion.div>
-            </SpotlightCard>
+              </div>
+            </MagicCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.08} className="md:col-span-1">
-            <SpotlightCard
-              className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-              spotlightColor="rgba(5, 150, 105, 0.15)"
-            >
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="h-full flex flex-col justify-center items-center text-center"
-              >
+            <MagicCard className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+              <div className="h-full flex flex-col justify-center items-center text-center">
                 <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-4">
                   <Lightning size={24} weight="duotone" />
                 </div>
                 <p className="text-3xl font-serif font-normal text-text-primary font-mono mb-1">35h</p>
                 <p className="text-sm text-text-secondary">Ore di formazione intensiva</p>
-              </motion.div>
-            </SpotlightCard>
+              </div>
+            </MagicCard>
           </ScrollReveal>
 
           {/* Row 2: three equal */}
           {hard.slice(1, 4).map((skill, i) => (
             <ScrollReveal key={skill.title} delay={0.1 + i * 0.06}>
-              <SpotlightCard
-                className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-                spotlightColor="rgba(5, 150, 105, 0.15)"
-              >
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="h-full"
-                >
+              <MagicCard className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                <div className="h-full">
                   <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
                     <skill.icon size={20} weight="duotone" />
                   </div>
@@ -171,23 +109,16 @@ export default function Competenze() {
                     {skill.title}
                   </h3>
                   <p className="text-base text-text-secondary leading-relaxed">{skill.desc}</p>
-                </motion.div>
-              </SpotlightCard>
+                </div>
+              </MagicCard>
             </ScrollReveal>
           ))}
 
-          {/* Row 3: two remaining + metric */}
+          {/* Row 3: two remaining + metric 5 */}
           {hard.slice(4).map((skill, i) => (
             <ScrollReveal key={skill.title} delay={0.2 + i * 0.06}>
-              <SpotlightCard
-                className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-                spotlightColor="rgba(5, 150, 105, 0.15)"
-              >
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="h-full"
-                >
+              <MagicCard className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                <div className="h-full">
                   <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
                     <skill.icon size={20} weight="duotone" />
                   </div>
@@ -195,38 +126,26 @@ export default function Competenze() {
                     {skill.title}
                   </h3>
                   <p className="text-base text-text-secondary leading-relaxed">{skill.desc}</p>
-                </motion.div>
-              </SpotlightCard>
+                </div>
+              </MagicCard>
             </ScrollReveal>
           ))}
 
           <ScrollReveal delay={0.25} className="md:col-span-1">
-            <SpotlightCard
-              className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-              spotlightColor="rgba(5, 150, 105, 0.15)"
-            >
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="h-full flex flex-col justify-center items-center text-center"
-              >
+            <MagicCard className="h-full p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+              <div className="h-full flex flex-col justify-center items-center text-center">
                 <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-4">
                   <Users size={24} weight="duotone" />
                 </div>
                 <p className="text-3xl font-serif font-normal text-text-primary font-mono mb-1">5</p>
                 <p className="text-sm text-text-secondary">Aree operative esplorate</p>
-              </motion.div>
-            </SpotlightCard>
+              </div>
+            </MagicCard>
           </ScrollReveal>
 
-          {/* Row 4: Soft skills wide — NO SpotlightCard */}
+          {/* Row 4: Soft skills wide — NO MagicCard */}
           <ScrollReveal delay={0.3} className="md:col-span-3">
-            <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="bg-surface rounded-[2.5rem] p-8 md:p-10 border border-slate-200/50
-                         shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]"
-            >
+            <div className="bg-surface rounded-[2.5rem] p-8 md:p-10 border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
                   <ChatCenteredText size={20} weight="duotone" />
@@ -241,7 +160,7 @@ export default function Competenze() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </ScrollReveal>
         </div>
       </div>
