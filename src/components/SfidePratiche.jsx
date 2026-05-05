@@ -167,7 +167,10 @@ function MacroPlateBlock({ onImageClick }) {
 
         <ScrollReveal className="lg:col-span-7 order-1 lg:order-2">
           <motion.div style={{ y }} className="space-y-4">
-            <div className="aspect-video rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] bg-muted">
+            <div
+              className="aspect-video rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] bg-muted relative group cursor-zoom-in"
+              onClick={() => onImageClick('/images/funzionamento-macroplateai.webm', 'Funzionamento MacroPlateAI', 'video')}
+            >
               <video
                 src="/images/funzionamento-macroplateai.webm"
                 autoPlay
@@ -176,6 +179,11 @@ function MacroPlateBlock({ onImageClick }) {
                 playsInline
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="white" className="drop-shadow-lg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
             <div className="aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200/50">
               <ClickableImage src="/images/macroplateai.png" alt="MacroPlateAI screenshot" onClick={onImageClick} />

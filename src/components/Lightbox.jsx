@@ -5,10 +5,12 @@ export default function Lightbox({ children }) {
   const [open, setOpen] = useState(false);
   const [src, setSrc] = useState('');
   const [alt, setAlt] = useState('');
+  const [mediaType, setMediaType] = useState('image');
 
-  const openLightbox = useCallback((imageSrc, imageAlt) => {
+  const openLightbox = useCallback((imageSrc, imageAlt, type = 'image') => {
     setSrc(imageSrc);
     setAlt(imageAlt);
+    setMediaType(type);
     setOpen(true);
     document.body.style.overflow = 'hidden';
   }, []);
@@ -52,11 +54,20 @@ export default function Lightbox({ children }) {
               className="relative z-10 max-w-5xl max-h-[85vh] w-full flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={src}
-                alt={alt}
-                className="max-w-full max-h-[80vh] object-contain rounded-[1.5rem] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] border border-white/10"
-              />
+              {mediaType === 'video' ? (
+                <video
+                  src={src}
+                  controls
+                  autoPlay
+                  className="max-w-full max-h-[80vh] object-contain rounded-[1.5rem] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] border border-white/10"
+                />
+              ) : (
+                <img
+                  src={src}
+                  alt={alt}
+                  className="max-w-full max-h-[80vh] object-contain rounded-[1.5rem] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] border border-white/10"
+                />
+              )}
               {alt && (
                 <p className="mt-4 text-sm text-white/70 font-medium text-center">{alt}</p>
               )}
