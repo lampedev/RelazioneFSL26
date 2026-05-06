@@ -50,7 +50,7 @@ export default function Intro() {
           <ScrollReveal className="lg:col-span-8">
             <div className="aspect-[16/9] rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)]">
               <img
-                src="/images/deloitte-reception.jpeg"
+                src="images/deloitte-reception.jpeg"
                 alt="Reception NextHub"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

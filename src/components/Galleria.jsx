@@ -55,9 +55,9 @@ export default function Galleria() {
                   delay={i * 0.03}
                   className={`${img.grid} relative group overflow-hidden rounded-[2rem] border border-slate-200/50 bg-muted cursor-zoom-in`}
                 >
-                  <div onClick={() => openLightbox(`/images/${img.src}`, img.alt)} className="absolute inset-0">
+                  <div onClick={() => openLightbox(`images/${img.src}`, img.alt)} className="absolute inset-0">
                     <img
-                      src={`/images/${img.src}`}
+                      src={`images/${img.src}`}
                       alt={img.alt}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"

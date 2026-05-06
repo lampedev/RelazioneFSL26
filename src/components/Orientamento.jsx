@@ -133,7 +133,7 @@ export default function Orientamento() {
               <motion.div style={{ y: y1 }} className="lg:col-span-5 lg:col-start-8 relative">
                 <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)]">
                   <ClickableImage
-                    src="/images/poliba-campus.jpg"
+                    src="images/poliba-campus.jpg"
                     alt="Campus Politecnico di Bari"
                     onClick={openLightbox}
                   />
@@ -163,7 +163,7 @@ export default function Orientamento() {
               {/* All 4 photos same size: 2x2 grid */}
               <StaggerItem className="col-span-12 md:col-span-6 row-span-2 relative overflow-hidden rounded-[2rem] border border-slate-200/50 group">
                 <ClickableImage
-                  src="/images/poliba-presentazione-01.jpg"
+                  src="images/poliba-presentazione-01.jpg"
                   alt="Presentazione progetto al Politecnico"
                   onClick={openLightbox}
                 />
@@ -175,7 +175,7 @@ export default function Orientamento() {
 
               <StaggerItem className="col-span-12 md:col-span-6 row-span-2 relative overflow-hidden rounded-[2rem] border border-slate-200/50 group">
                 <ClickableImage
-                  src="/images/poliba-presentazione-05.jpg"
+                  src="images/poliba-presentazione-05.jpg"
                   alt="Pitch davanti ai tutor"
                   onClick={openLightbox}
                 />
@@ -187,7 +187,7 @@ export default function Orientamento() {
 
               <StaggerItem className="col-span-12 md:col-span-6 row-span-2 relative overflow-hidden rounded-[2rem] border border-slate-200/50 group">
                 <ClickableImage
-                  src="/images/poliba-presentazione-03.jpg"
+                  src="images/poliba-presentazione-03.jpg"
                   alt="Sessione di domande e risposte"
                   onClick={openLightbox}
                 />
@@ -199,7 +199,7 @@ export default function Orientamento() {
 
               <StaggerItem className="col-span-12 md:col-span-6 row-span-2 relative overflow-hidden rounded-[2rem] border border-slate-200/50 group">
                 <ClickableImage
-                  src="/images/poliba-presentazione-04.jpg"
+                  src="images/poliba-presentazione-04.jpg"
                   alt="Il team in aula"
                   onClick={openLightbox}
                 />

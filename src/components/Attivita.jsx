@@ -39,7 +39,7 @@ export default function Attivita() {
             <ScrollReveal className="order-2 lg:order-1">
               <div className="rounded-[2.5rem] overflow-hidden bg-muted aspect-video group border border-slate-200/50">
                 <img
-                  src="/images/foto-collaborazione-lavoro-gruppo.jpg"
+                  src="images/foto-collaborazione-lavoro-gruppo.jpg"
                   alt="Teamwork"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -94,7 +94,7 @@ export default function Attivita() {
             <ScrollReveal>
               <div className="rounded-[2.5rem] overflow-hidden bg-muted aspect-video group border border-slate-200/50">
                 <img
-                  src="/images/foto-indormatica-operation-tecnologies.jpg"
+                  src="images/foto-indormatica-operation-tecnologies.jpg"
                   alt="Presentation"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -107,7 +107,7 @@ export default function Attivita() {
             <ScrollReveal className="order-2 lg:order-1">
               <div className="rounded-[2.5rem] overflow-hidden bg-muted aspect-video group border border-slate-200/50">
                 <img
-                  src="/images/foto-tutti-insieme-sulk-palco.jpg"
+                  src="images/foto-tutti-insieme-sulk-palco.jpg"
                   alt="Students oriented"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

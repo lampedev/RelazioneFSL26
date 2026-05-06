@@ -42,17 +42,17 @@ function EndoSignalBlock({ onImageClick }) {
         <ScrollReveal className="lg:col-span-7 relative">
           <div className="space-y-4">
             <div className="aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)]">
-              <ClickableImage src="/images/dashboard-medico-endosignal.png" alt="Dashboard medico EndoSignal" onClick={onImageClick} />
+              <ClickableImage src="images/dashboard-medico-endosignal.png" alt="Dashboard medico EndoSignal" onClick={onImageClick} />
             </div>
             <div className="grid grid-cols-3 gap-3">
               <div className="aspect-square rounded-2xl overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/applicativo-mobile-endosignal.png" alt="App mobile EndoSignal" onClick={onImageClick} />
+                <ClickableImage src="images/applicativo-mobile-endosignal.png" alt="App mobile EndoSignal" onClick={onImageClick} />
               </div>
               <div className="aspect-square rounded-2xl overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/come-funziona-endosignal.png" alt="Come funziona EndoSignal" onClick={onImageClick} />
+                <ClickableImage src="images/come-funziona-endosignal.png" alt="Come funziona EndoSignal" onClick={onImageClick} />
               </div>
               <div className="aspect-square rounded-2xl overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/endosignal-roadmap.png" alt="Roadmap EndoSignal" onClick={onImageClick} />
+                <ClickableImage src="images/endosignal-roadmap.png" alt="Roadmap EndoSignal" onClick={onImageClick} />
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ function MacroPlateBlock({ onImageClick }) {
           </div>
 
           <a
-            href="/images/pdfstrategiadimarketingmacroplateai.pdf"
+            href="images/pdfstrategiadimarketingmacroplateai.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark transition-colors font-medium"
@@ -169,10 +169,10 @@ function MacroPlateBlock({ onImageClick }) {
           <motion.div style={{ y }} className="space-y-4">
             <div
               className="aspect-video rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] bg-muted relative group cursor-zoom-in"
-              onClick={() => onImageClick('/images/funzionamento-macroplateai.webm', 'Funzionamento MacroPlateAI', 'video')}
+              onClick={() => onImageClick('images/funzionamento-macroplateai.webm', 'Funzionamento MacroPlateAI', 'video')}
             >
               <video
-                src="/images/funzionamento-macroplateai.webm"
+                src="images/funzionamento-macroplateai.webm"
                 autoPlay
                 loop
                 muted
@@ -186,7 +186,7 @@ function MacroPlateBlock({ onImageClick }) {
               </div>
             </div>
             <div className="aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200/50">
-              <ClickableImage src="/images/macroplateai.png" alt="MacroPlateAI screenshot" onClick={onImageClick} />
+              <ClickableImage src="images/macroplateai.png" alt="MacroPlateAI screenshot" onClick={onImageClick} />
             </div>
           </motion.div>
         </ScrollReveal>
@@ -205,16 +205,16 @@ function AgriDataBlock({ onImageClick }) {
           <div className="lg:col-span-8 order-1">
             <div className="grid grid-cols-12 auto-rows-[120px] md:auto-rows-[150px] gap-3">
               <div className="col-span-7 row-span-2 rounded-[2rem] overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/agritechrichieste.png" alt="AgriData richieste" onClick={onImageClick} />
+                <ClickableImage src="images/agritechrichieste.png" alt="AgriData richieste" onClick={onImageClick} />
               </div>
               <div className="col-span-5 row-span-1 rounded-[2rem] overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/agritech3schermata.png" alt="AgriData schermata" onClick={onImageClick} />
+                <ClickableImage src="images/agritech3schermata.png" alt="AgriData schermata" onClick={onImageClick} />
               </div>
               <div className="col-span-5 row-span-1 rounded-[2rem] overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/agritechanalytics.png" alt="AgriData analytics" onClick={onImageClick} />
+                <ClickableImage src="images/agritechanalytics.png" alt="AgriData analytics" onClick={onImageClick} />
               </div>
               <div className="col-span-12 row-span-2 rounded-[2rem] overflow-hidden border border-slate-200/50">
-                <ClickableImage src="/images/agritech2foto.png" alt="AgriData campo" onClick={onImageClick} />
+                <ClickableImage src="images/agritech2foto.png" alt="AgriData campo" onClick={onImageClick} />
               </div>
             </div>
 
